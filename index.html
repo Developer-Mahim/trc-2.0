@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCR Luxury - Columbus Reputation Leader | New Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0F172A; /* Slate-900 - Main dark background */
+            color: #E2E8F0; /* Slate-200 - Default text color */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        /* --- Custom Scrollbar (Optional, for a more polished look) --- */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1E293B; /* Slate-800 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #F59E0B; /* Amber-500 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D97706; /* Amber-600 */
+        }
+
+        /* --- Button Styles --- */
+        .btn {
+            padding: 0.75rem 1.75rem; /* py-3 px-7 */
+            border-radius: 0.5rem; /* rounded-lg */
+            font-weight: 600; /* font-semibold */
+            transition: all 0.3s ease-in-out;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: inline-block;
+        }
+        .btn-primary {
+            background-color: #F59E0B; /* Amber-500 */
+            color: #0F172A; /* Slate-900 */
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+        .btn-primary:hover {
+            background-color: #D97706; /* Amber-600 */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: #F59E0B; /* Amber-500 */
+            border: 2px solid #F59E0B; /* Amber-500 */
+        }
+        .btn-secondary:hover {
+            background-color: #F59E0B; /* Amber-500 */
+            color: #0F172A; /* Slate-900 */
+            transform: translateY(-2px);
+        }
+        .btn-dark {
+            background-color: #1E293B; /* Slate-800 */
+            color: #E2E8F0; /* Slate-200 */
+        }
+        .btn-dark:hover {
+            background-color: #334155; /* Slate-700 */
+            transform: translateY(-2px);
+        }
+
+
+        /* --- Section Styling --- */
+        .section-title {
+            font-size: 2.5rem; /* text-4xl */
+            font-weight: 800; /* font-extrabold */
+            margin-bottom: 1rem; /* mb-4 */
+            color: #FFFFFF; /* White */
+            text-align: center;
+        }
+        .section-subtitle {
+            font-size: 1.125rem; /* text-lg */
+            color: #94A3B8; /* Slate-400 */
+            margin-bottom: 3rem; /* mb-12 */
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        /* --- Card Styles --- */
+        .feature-card {
+            background-color: #1E293B; /* Slate-800 */
+            border-radius: 0.75rem; /* rounded-xl */
+            padding: 2rem; /* p-8 */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #334155; /* Slate-700 */
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        .feature-card .icon {
+            font-size: 2.5rem; /* text-4xl */
+            color: #F59E0B; /* Amber-500 */
+            margin-bottom: 1rem; /* mb-4 */
+        }
+
+        /* --- Pricing Card --- */
+        .pricing-plan {
+            background-color: #1E293B; /* Slate-800 */
+            border-radius: 0.75rem; /* rounded-xl */
+            padding: 2.5rem; /* p-10 */
+            text-align: center;
+            border: 1px solid #334155; /* Slate-700 */
+            transition: all 0.3s ease;
+        }
+        .pricing-plan.featured {
+            border-color: #F59E0B; /* Amber-500 */
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(245, 158, 11, 0.2);
+        }
+        .pricing-plan h4 {
+            color: #FFFFFF; /* White */
+        }
+
+        /* --- Form Input --- */
+        .form-input {
+            background-color: #1E293B; /* Slate-800 */
+            border: 1px solid #334155; /* Slate-700 */
+            color: #E2E8F0; /* Slate-200 */
+            border-radius: 0.375rem; /* rounded-md */
+            padding: 0.75rem 1rem; /* py-3 px-4 */
+            width: 100%;
+        }
+        .form-input::placeholder {
+            color: #64748B; /* Slate-500 */
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #F59E0B; /* Amber-500 */
+            box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.3);
+        }
+        .form-label {
+            color: #CBD5E1; /* Slate-300 */
+            margin-bottom: 0.5rem; /* mb-2 */
+            display: block;
+            font-weight: 500; /* font-medium */
+        }
+
+        /* --- FAQ --- */
+        .faq-item button {
+            color: #E2E8F0; /* Slate-200 */
+        }
+        .faq-item button:hover {
+            color: #F59E0B; /* Amber-500 */
+        }
+        .faq-item svg {
+            color: #94A3B8; /* Slate-400 */
+        }
+        .faq-content {
+            background-color: #1E293B; /* Slate-800 */
+            border-radius: 0 0 0.5rem 0.5rem; /* rounded-b-lg */
+            padding: 1rem;
+            color: #CBD5E1; /* Slate-300 */
+        }
+        .faq-item {
+            background-color: #172033; /* Slightly darker than Slate-800 */
+            border-radius: 0.5rem; /* rounded-lg */
+            margin-bottom: 0.75rem; /* mb-3 */
+            overflow: hidden; /* To make border-radius work with content */
+        }
+
+        /* Utility for gradient text */
+        .text-gradient {
+            background: linear-gradient(to right, #F59E0B, #FBBF24); /* Amber-500 to Amber-400 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="py-5 absolute w-full z-10">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-white">TCR <span class="text-gradient">Luxury</span></h1>
+            </div>
+    </header>
+
+    <section class="hero-section relative min-h-screen flex items-center justify-center py-20 md:py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-amber-500 opacity-10 rounded-full filter blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-0 right-0 w-72 h-72 bg-sky-500 opacity-10 rounded-full filter blur-3xl animate-pulse animation-delay-2000"></div>
+
+        <div class="container mx-auto px-6 text-center relative z-1">
+            <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-white">
+                Unlock <span class="text-gradient">Unrivaled Growth:</span> <br class="hidden md:inline">Become a Columbus Reputation Leader.
+            </h2>
+            <p class="text-lg md:text-xl mb-10 text-slate-300 max-w-3xl mx-auto">
+                Elevate your brand and dominate your market with our exclusive reputation leader program, designed for discerning Columbus businesses.
+            </p>
+            <a href="#features" class="btn btn-primary text-lg">
+                Discover The Premier Advantage
+            </a>
+        </div>
+    </section>
+
+    <section id="features" class="premier-advantage-section py-16 md:py-24 bg-slate-900">
+        <div class="container mx-auto px-6">
+            <h3 class="section-title">The <span class="text-gradient">Premier Advantage</span> You'll Receive</h3>
+            <p class="section-subtitle">
+                Our comprehensive suite of tools and services are designed to put you ahead of the competition.
+            </p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-star"></i></div>
+                    <h4 class="text-xl font-semibold mb-2 text-white">Dedicated Review Survey Funnel</h4>
+                    <p class="text-slate-400">
+                        Our unique survey funnel ensures every customer has a chance to share their experience.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-mouse-pointer"></i></div>
+                    <h4 class="text-xl font-semibold mb-2 text-white">Choose Your Review Platform Emphasis</h4>
+                    <p class="text-slate-400">
+                        Flexibility to focus your efforts on the review collection strategy as needed.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-cogs"></i></div> <h4 class="text-xl font-semibold mb-2 text-white">Multiple Possibilities (POS, Email, etc.)</h4>
+                    <p class="text-slate-400">
+                        Seamlessly integrate review requests into your existing customer touchpoints.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-qrcode"></i></div>
+                    <h4 class="text-xl font-semibold mb-2 text-white">Custom QR Codes for Reviews</h4>
+                    <p class="text-slate-400">
+                        Print-ready QR codes make it simple and easy for customers to access.
+                    </p>
+                </div>
+                <div class="feature-card">
+                     <div class="icon"><i class="fas fa-link"></i></div>
+                    <h4 class="text-xl font-semibold mb-2 text-white">Shortlink to Request Reviews</h4>
+                    <p class="text-slate-400">
+                        Convenient shortlinks for your team to reach customers effectively.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-chart-pie"></i></div> <h4 class="text-xl font-semibold mb-2 text-white">Gain Valuable Customer Insights</h4>
+                    <p class="text-slate-400">
+                        Understand your customers better and make data-driven decisions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h3 class="section-title">Don't Lose Consumers to <span class="text-gradient">Competitors</span></h3>
+                <p class="section-subtitle">
+                    Optimize your listings, improve your rankings on sites like Google, and gain a significant edge in the Columbus market.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-700 p-6 rounded-lg text-center transition-all duration-300 hover:bg-slate-600 hover:shadow-xl">
+                    <div class="text-4xl text-amber-400 mb-4"><i class="fas fa-medal"></i></div>
+                    <h4 class="text-lg font-semibold mb-2 text-white">Dedicated Program Success Manager</h4>
+                    <p class="text-slate-300 text-sm">
+                        We do the heavy lifting for you, ensuring your program's success.
+                    </p>
+                </div>
+                 <div class="bg-slate-700 p-6 rounded-lg text-center transition-all duration-300 hover:bg-slate-600 hover:shadow-xl">
+                    <div class="text-4xl text-amber-400 mb-4"><i class="fas fa-headset"></i></div>
+                    <h4 class="text-lg font-semibold mb-2 text-white">1-1, US Phone & Email Support</h4>
+                    <p class="text-slate-300 text-sm">
+                        Get personalized support whenever you need it.
+                    </p>
+                </div>
+                 <div class="bg-slate-700 p-6 rounded-lg text-center transition-all duration-300 hover:bg-slate-600 hover:shadow-xl">
+                    <div class="text-4xl text-amber-400 mb-4"><i class="fas fa-shield-alt"></i></div>
+                    <h4 class="text-lg font-semibold mb-2 text-white">100% Satisfaction Guarantee</h4>
+                    <p class="text-slate-300 text-sm">
+                        Enroll with peace of mind with our full guarantee.
+                    </p>
+                </div>
+                 <div class="bg-slate-700 p-6 rounded-lg text-center transition-all duration-300 hover:bg-slate-600 hover:shadow-xl">
+                    <div class="text-4xl text-amber-400 mb-4"><i class="far fa-calendar-times"></i></div>
+                    <h4 class="text-lg font-semibold mb-2 text-white">Cancel Anytime, Keep Your Listings</h4>
+                    <p class="text-slate-300 text-sm">
+                        No long-term contracts. Your listings value, if you decide to leave.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="limited-time-section py-12 md:py-20 bg-gradient-to-r from-amber-500 to-orange-500 text-slate-900">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-3xl md:text-4xl font-bold mb-3">Limited Time: <span class="underline decoration-wavy decoration-slate-900/50">Exclusive Enrollment Opportunity</span></h3>
+            <p class="text-lg md:text-xl text-slate-800 max-w-3xl mx-auto">
+                While Your Presence Is Our First Choice, We Can Make This Program Available To Only A Limited Number Of Qualifying Brands In The Columbus Area.
+            </p>
+        </div>
+    </section>
+
+    <section id="pricing" class="choose-path-section py-16 md:py-24 bg-slate-900">
+        <div class="container mx-auto px-6">
+            <h3 class="section-title">Choose Your Path to <span class="text-gradient">Reputation Excellence</span></h3>
+            <p class="section-subtitle">
+                Select the plan that best suits your business needs and start building a stellar reputation today.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center items-center md:items-stretch gap-8 max-w-4xl mx-auto">
+                <div class="pricing-plan flex-1">
+                    <h4 class="text-2xl font-semibold mb-3">Monthly Plan</h4>
+                    <p class="text-5xl font-extrabold mb-1 text-white">$497 <span class="text-lg font-normal text-slate-400">/month</span></p>
+                    <p class="text-sm text-green-400 font-semibold mb-6">Save $99 Off</p>
+                    <p class="text-xs text-slate-500 mb-8">*Historical Low For This Program</p>
+                    <button class="btn btn-dark w-full">Select Monthly</button>
+                </div>
+                <div class="pricing-plan featured flex-1">
+                     <div class="absolute top-0 right-0 -mt-3 -mr-3 bg-amber-500 text-slate-900 text-xs font-bold uppercase px-3 py-1 rounded-full">Most Popular</div>
+                    <h4 class="text-2xl font-semibold mb-3">Annual Plan</h4>
+                    <p class="text-5xl font-extrabold mb-1 text-amber-400">$970 <span class="text-lg font-normal text-slate-400">/year</span></p>
+                    <p class="text-sm text-green-400 font-semibold mb-6">Save $99 Off</p>
+                    <p class="text-xs text-slate-500 mb-8">*Historical Low For This Program</p>
+                    <button class="btn btn-primary w-full">Select Annual</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="secure-spot-section py-16 md:py-24 bg-slate-800">
+        <div class="container mx-auto px-6 max-w-2xl">
+            <h3 class="section-title">Secure Your <span class="text-gradient">Spot Now</span></h3>
+            <p class="section-subtitle">Complete the form below to begin your journey to reputation leadership.</p>
+            <form action="#" method="POST" class="space-y-6 bg-slate-700 p-8 rounded-xl shadow-2xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" name="name" id="name" class="form-input" placeholder="Your Full Name">
+                    </div>
+                    <div>
+                        <label for="business-name" class="form-label">Business Name</label>
+                        <input type="text" name="business-name" id="business-name" class="form-input" placeholder="Your Company Name">
+                    </div>
+                </div>
+                <div>
+                    <label for="business-address" class="form-label">Business Address</label>
+                    <input type="text" name="business-address" id="business-address" class="form-input" placeholder="123 Main St, Columbus, OH">
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" name="email" id="email" class="form-input" placeholder="you@example.com">
+                    </div>
+                    <div>
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="tel" name="phone" id="phone" class="form-input" placeholder="(555) 123-4567">
+                    </div>
+                </div>
+                <div>
+                    <label for="credit-card" class="form-label">Credit Card</label>
+                    <input type="text" name="credit-card" id="credit-card" class="form-input" placeholder="•••• •••• •••• ••••">
+                </div>
+                <p class="text-xs text-slate-400 text-center pt-2">
+                    Lock In Your Spot As The Only Clientele In Your Area Using The Reputation Program to Get More Reviews.
+                </p>
+                <div>
+                    <button type="submit" class="btn btn-primary w-full text-lg">
+                        Try Risk-Free!
+                    </button>
+                </div>
+                <p class="text-xs text-slate-400 mt-3 text-center">
+                    100% Money Back Guarantee. Cancel Anytime. <br>
+                    <span class="text-amber-400 font-semibold">Immediate Placement - Secure Checkout</span>
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section py-16 md:py-24 bg-slate-900">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h3 class="section-title">Frequently Asked <span class="text-gradient">Questions</span></h3>
+            <p class="section-subtitle">Find answers to common questions about our program and services.</p>
+            <div id="faq-accordion" class="space-y-3">
+                <div class="faq-item">
+                    <button class="flex justify-between items-center w-full text-left text-lg font-medium p-5 focus:outline-none" onclick="toggleFaq(this)">
+                        <span>What Happens After I Place My Order?</span>
+                        <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content hidden">
+                        <p>Once your order is placed, our dedicated team will reach out to you within 24 business hours to begin the onboarding process. We'll guide you every step of the way to ensure a smooth setup and launch of your reputation management program.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="flex justify-between items-center w-full text-left text-lg font-medium p-5 focus:outline-none" onclick="toggleFaq(this)">
+                        <span>How Does the 100% Money Back Guarantee Work?</span>
+                        <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content hidden">
+                        <p>We are confident in the value our program provides. If, for any reason, you are not satisfied within the first 30 days of your subscription, you can request a full refund. No questions asked. Your satisfaction is our priority.</p>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 text-slate-400 py-12 text-sm border-t border-slate-800">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; <span id="currentYear"></span> TCR Luxury. All Rights Reserved.</p>
+            <p class="mt-2">
+                <a href="#" class="hover:text-amber-400 transition-colors">Privacy Policy</a> | <a href="#" class="hover:text-amber-400 transition-colors">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Basic FAQ Accordion Toggle
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('svg');
+            // Close other open FAQs
+            document.querySelectorAll('.faq-content:not(.hidden)').forEach(openContent => {
+                if (openContent !== content) {
+                    openContent.classList.add('hidden');
+                    openContent.previousElementSibling.querySelector('svg').style.transform = 'rotate(0deg)';
+                }
+            });
+
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Smooth scroll for anchor links (e.g., hero button to features)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const offsetTop = targetElement.offsetTop - 60; // Adjust for fixed header if any
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
